@@ -3,27 +3,27 @@ import { AdviceContainer, Wrapper } from "./appStyle";
 
 export default function App() {
 
-  const [number, setNumber] = useState(1);
-  const [quote, setQuote] = useState("");
+  const [id, setId] = useState(1);
+  const [advice, setAdvice] = useState("");
 
   function getAdvice(){
     const randomId = Math.floor(Math.random() * 100)
-    setNumber(randomId)
+    setId(randomId)
   }
   useEffect(() => {
-    fetch(`https://api.adviceslip.com/advice/${number}`)
+    fetch(`https://api.adviceslip.com/advice/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setQuote(data.slip);
+        setAdvice(data.slip);
         console.log(data)
       });
-  }, [number]);
+  }, [id]);
 
   return (
     <Wrapper>
-      <p className="advice-number">Advice #{quote.id}</p>
+      <p className="advice-number">Advice #{advice.id}</p>
       <AdviceContainer>
-        <p>{quote.advice}</p>
+        <p>{advice.advice}</p>
       </AdviceContainer>
       <button onClick={getAdvice}>
         <img src="/images/icon-dice.svg" alt="dice-svg" className="icon-dice" />
