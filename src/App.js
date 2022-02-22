@@ -7,7 +7,7 @@ export default function App() {
   const [advice, setAdvice] = useState("");
 
   function getAdvice(){
-    const randomId = Math.floor(Math.random() * 100)
+    const randomId = Math.floor(Math.random() * 200)
     setId(randomId)
   }
   useEffect(() => {
