@@ -2,33 +2,30 @@ import React, { useState, useEffect } from "react";
 import { AdviceContainer, Wrapper } from "./appStyle";
 
 export default function App() {
-  const [trigger, setTrigger] = useState(false);
-  const [number, setNumber] = useState(0);
+
+  const [number, setNumber] = useState(1);
   const [quote, setQuote] = useState("");
 
+  function getAdvice(){
+    const randomId = Math.floor(Math.random() * 100)
+    setNumber(randomId)
+  }
   useEffect(() => {
-    const getAPI = async () => {
-      try {
-        await fetch("https://api.adviceslip.com/advice")
-          .then((res) => res.json())
-          .then((data) => {
-            setNumber(data.slip.id);
-            setQuote(data.slip.advice);
-          });
-      } catch {
-        console.log("Issue fetching and parsing Advice Data");
-      }
-    };
-    getAPI();
-  }, [trigger, setNumber, setQuote]);
+    fetch(`https://api.adviceslip.com/advice/${number}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setQuote(data.slip);
+        console.log(data)
+      });
+  }, [number]);
 
   return (
     <Wrapper>
-      <p className="advice-number">Advice #{number}</p>
+      <p className="advice-number">Advice #{quote.id}</p>
       <AdviceContainer>
-        <p>{quote}</p>
+        <p>{quote.advice}</p>
       </AdviceContainer>
-      <button onClick={() => setTrigger(!trigger)}>
+      <button onClick={getAdvice}>
         <img src="/images/icon-dice.svg" alt="dice-svg" className="icon-dice" />
       </button>
     </Wrapper>
