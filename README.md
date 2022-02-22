@@ -7,11 +7,11 @@
 
 
 
-
+## Descktop Design
 ![desktop-design](https://user-images.githubusercontent.com/65924250/155056625-50935fea-7d49-4ea9-a42e-51b6e9350b07.jpg)
-## active state
+## Active state
 ![active-states](https://user-images.githubusercontent.com/65924250/155056632-0dbb46eb-5db8-4aa7-a4b0-934a526ec608.jpg)
-## mobile version
+## Mobile Design
 ![mobile-design](https://user-images.githubusercontent.com/65924250/155056637-e21b2963-8123-4f25-ac8a-b27cf84c8803.jpg)
 
 
