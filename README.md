@@ -1,5 +1,5 @@
 ## Challenge by Frontend mentor 
-### [Demo link](https://advice-jenerator.netlify.app)
+### [Live site url](https://advice-jenerator.netlify.app)
 
 ### [Challenge Link](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
 
