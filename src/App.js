@@ -4,7 +4,7 @@ import { AdviceContainer, Wrapper } from "./appStyle";
 export default function App() {
   const [id, setId] = useState(1);
   const [advice, setAdvice] = useState({});
-  const [refresh, setRefresh] = useState(false);
+
 
   function getAdvice() {
     const randomId = Math.floor(Math.random() * 200);
